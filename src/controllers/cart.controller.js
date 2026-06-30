@@ -4,9 +4,9 @@ import cartModel from "../models/cart.model.js";
 const getAllGamesCart = async (req, res) => { //traer todos los juegos
     try {
 
-        const games = await cartModel.find().lean();
+        const games = await cartModel.find().populate('productos.product').lean();
         const totalJuegos = games[0].productos.length;
-        const totalMonto = games[0].productos.reduce((a, b) => { return a + b.precio }, 0)
+        const totalMonto = games[0].productos.reduce((a, b) => { return a + b.product.precio }, 0)
 
         res.render('cart', { games, totalJuegos, totalMonto });
 
@@ -18,18 +18,11 @@ const getAllGamesCart = async (req, res) => { //traer todos los juegos
 //=================================== cart.routes ====================================
 const modifyGame = async (req, res) => { //modificar juego
     try {
-        const { img, nombre, precio } = req.body;
-
-
-        if (!nombre)
-            return res.status(400).json({ sucess: false, error: "El campo nombre es requrido" });
-        if (!precio)
-            return res.status(400).json({ sucess: false, error: "El campo precio es requrido" });
-
+        const { productoId } = req.body;
 
         const newGame = await cartModel.findOneAndUpdate(
             {},
-            { $push: { productos: { nombre, precio } } },
+            { $push: { productos: { product: productoId, quantity: 1 } } },
             { upsert: true, new: true }
         );
 

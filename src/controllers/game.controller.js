@@ -2,14 +2,27 @@ import gameModel from "../models/game.model.js";
 
 //======================== game.routes ===============================
 const getAllGames = async (req, res) => { //traer todos los juegos
+    const page = req.query.page || 1;
+    const limit = req.query.limit || 10;
     try {
-        const games = await gameModel.find();
+        const games = await gameModel.paginate({}, { page, limit });
 
-        if (games.length === 0) {
+        if (games.docs.length === 0) {
             return res.status(400).json({ success: false, error: "no existen juegos" });
         }
 
-        res.status(200).json({ success: true, playload: games });
+        res.status(200).json({
+            status: "success",
+            payload: games.docs,
+            totalPages: games.totalPages,
+            prevPage: games.prevPage,
+            nextPage: games.nextPage,
+            page: games.page,
+            hasPrevPage: games.hasPrevPage,
+            hasNextPage: games.hasNextPage,
+            prevLink: null,
+            nextLink: null
+        });
 
     } catch (error) {
         res.status(500).json({ success: false, message: "no existen juegos", error });
@@ -70,12 +83,12 @@ const updateNameById = async (req, res) => { // actualizo un nombre por id
 };
 
 
-const deleteName = async (req, res) => { //eliminar por nombre
+const deleteName = async (req, res) => { //eliminar por id
     try {
 
-        const { nombre } = req.params; //user to delete
+        const { _id } = req.params; //user to delete
 
-        const namePosition = await gameModel.deleteOne({ nombre: nombre }); // We are looking for your position
+        const namePosition = await gameModel.deleteOne({ _id: _id }); // We are looking for your position
 
         if (namePosition.deletedCount === 0) {
             return res.status(404).json({ success: false, error: `No existen juegos con ese nombre ${nombre}` })
@@ -129,7 +142,7 @@ const lookForByIdViews = async (req, res) => {
     try {
         const { id } = req.params;
         const game = await gameModel.findById(id).lean()
-        res.render("product-detail", { game})
+        res.render("product-detail", { game })
     } catch (error) {
         console.error('error al detallar', error)
     }

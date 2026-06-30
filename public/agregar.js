@@ -7,9 +7,7 @@ const totalCart = document.querySelector('.h2-total-carrito');
 
 botonAgregar.forEach(data => {
     data.addEventListener('click', async () => {
-        const nombre = data.dataset.nombre;
-        const precio = data.dataset.precio;
-        const img = data.dataset.img;
+        const productoId = data.dataset.id;
         console.log('click detectado')
 
         try {
@@ -19,7 +17,7 @@ botonAgregar.forEach(data => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ nombre: nombre, precio: precio, img: img }),
+                body: JSON.stringify({productoId: productoId}),
             });
             if (contadorHeader) {
                 contadorHeader.innerText = `(${Number(contadorHeader.innerText.replace(/\D/g, '')) + 1})`;
