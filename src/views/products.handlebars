@@ -1,0 +1,27 @@
+<div class="content-h1-tienda">
+    <h1 class="h1-tienda text-2xl">{{tittle}} </h1>
+    <img src="/mando.png" alt="icono de mando" class="icon-mando">
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    {{#each games}}
+    <div class="card bg-base-100">
+        <div class="card-body">
+            <ul>
+                <li>
+                    <h2 class="text-2xl">{{nombre}}</h2>
+                    <h3><strong>Categoría:</strong> {{categoria}}</h3>
+                    <h3><strong>Precio:</strong> ${{precio}}</h3>
+                </li>
+                <div class="card-actios justify-end">
+                    <a class="btn btn-info" href="/products/{{_id}}">Ver detalle</a>
+                    <button class="btn btn-info btn-agregar" data-nombre="{{nombre}}" data-precio="{{precio}}"
+                        data-img="{{img}}">Agregar al carrito</button>
+                </div>
+            </ul>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<script src="/agregar.js"></script>

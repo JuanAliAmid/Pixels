@@ -1,0 +1,31 @@
+<section>
+
+    <form action="/api/games" method="POST" class="form-content">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre">
+
+        <label for="anio">Año</label>
+        <input type="number" name="anio">
+
+        <label for="categoria">Categoria</label>
+        <input type="text" name="categoria">
+
+        <button type="submit">Guardar</button>
+
+    </form>
+
+</section>
+<script>
+    const inputs = document.querySelectorAll('.form-content input');
+    const btn = document.querySelector('.form-content button');
+
+    btn.disabled = true;
+
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            const inputsCompletos = [...inputs].every(i => i.value.trim() !== '') // si todos los campos esta llenos habilida el boton
+            btn.disabled = !inputsCompletos // sino lo deshabilita
+        });
+    });
+</script>

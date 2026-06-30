@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Monofett&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Jersey+10&family=Geo:ital@0;1&family=Share+Tech+Mono&display=swap');
+
+@keyframes gradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-base-200 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.397)), url('/fondoB.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main {
+    flex: 1;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #fffb00, #cb3398, #cb3398, #fffb00);
+    animation: gradiente 8s ease infinite;
+    background-size: 300% 300%;
+    border: none;
+    transition: 0.5s;
+}
+
+.btn-info:hover {
+    background-color: rgb(241, 67, 241);
+    transform: translateX(6px);
+}
+
+.btn-ghost {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.bton-home {
+    padding: 5px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #12f538, #00995fd8, #ffd000, #fd00f1);
+    font-family: "Share Tech Mono", monospace;
+    animation: gradiente 8s ease infinite;
+    background-size: 300% 300%;
+    transition: 0.5s;
+    color: black;
+    margin: 10px;
+}
+
+.bton-home:hover {
+    transform: translateY(-6px);
+}
+
+
+.h1-tienda.text-2xl {
+    color: white;
+    margin: 50px;
+    margin-right: 0;
+    font-size: clamp(2rem, 5vw, 60px);
+}
+
+.menu {
+    gap: 10PX;
+}
+
+.icon-header {
+    width: 100px;
+    height: auto;
+}
+
+.icon-mando {
+    width: 70px;
+    height: auto;
+    filter: drop-shadow(0px 0px 12px rgba(255, 204, 0, 0.6)) drop-shadow(0px 0px 20px rgba(255, 0, 127, 0.8));
+    -webkit-text-stroke: 1.05px rgb(255, 255, 255);
+}
+
+a.a-header {
+    transition: 0.3s;
+    color: white;
+    font-family: "Jersey 10";
+    letter-spacing: 3px;
+    font-size: clamp(1.5rem, 2.5vw, 1.125rem);
+}
+
+a.a-header:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.432);
+}
+
+.h2-header {
+    font-family: "Monofett", monospace;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    letter-spacing: 3px;
+    color: #ffcc00;
+    margin-left: 10px;
+}
+
+.h3-home {
+    font-family: 'jersey 10';
+    font-size: clamp(2rem, 2.5vw, 1.125rem);
+    text-align: center;
+    color: white;
+}
+
+h1.text-2xl {
+    text-align: center;
+    font-family: 'jersey 10';
+    letter-spacing: 5px;
+    background: linear-gradient(135deg, #fffb00, #cb3398, #cb3398, #fffb00);
+    animation: gradiente 8s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 300% 300%;
+    font-size: clamp(2rem, 5vw, 70px);
+    margin: 10px;
+    padding: 10px;
+    filter: drop-shadow(0px 0px 12px rgba(255, 204, 0, 0.6)) drop-shadow(0px 0px 20px rgba(255, 0, 127, 0.8));
+    -webkit-text-stroke: 1.05px rgb(255, 255, 255);
+}
+
+header {
+    width: 100%;
+}
+
+.navbar {
+    background-color: rgba(88, 34, 99, 0.61);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #cb3398;
+}
+
+
+.card-body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: rgba(128, 128, 128, 0);
+}
+
+.card-body ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-actios.justify-end {
+    display: flex;
+    flex-wrap: wrap;
+    /* Si los dos botones no entran en una fila, uno baja */
+    gap: 10px;
+    margin-top: 15px;
+    /* Separa los botones del texto superior */
+    width: 100%;
+}
+
+.card-body h2,
+.card-body h3 {
+    margin: 0;
+    word-break: break-word;
+    /* Si el título es muy largo, saltará de línea solo */
+}
+
+.card.bg-base-100 {
+    display: flex;
+
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* Manda los botones siempre abajo */
+    align-items: flex-start;
+    /* Estira el contenido para usar todo el ancho */
+    color: white;
+    backdrop-filter: blur(8.5px);
+    border: 2px solid rgb(255, 255, 255);
+    font-family: "Share Tech Mono", monospace;
+    transition: 0.5s;
+    background-color: rgba(88, 34, 99, 0.61);
+    border-right: 7px solid rgb(255, 255, 255);
+    border-bottom: 7px solid rgb(255, 255, 255);
+    overflow: hidden;
+    /* Corta de raíz cualquier cosa que intente salirse */
+}
+
+.card:hover {
+    transform: scale(1.04);
+    background-color: rgba(100, 37, 112, 0.822);
+    border: 2px solid rgba(238, 255, 0, 0.692);
+    border-right: 7px solid rgba(238, 255, 0, 0.692);
+    border-bottom: 7px solid rgba(238, 255, 0, 0.692);
+}
+
+.content-h1-tienda {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.card-cart-content {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    margin: 10px;
+    border: 2px solid #016a2a;
+    border-right: 7px solid #016a2a;
+    border-bottom: 7px solid #016a2a;
+}
+
+.icon-basura {
+    height: 50px;
+    width: auto;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+.icon-basura:hover {
+    transform: scale(1.04);
+    filter: drop-shadow(0px 0px 8px rgba(117, 117, 117, 0.6)) drop-shadow(0px 0px 8px rgba(189, 189, 189, 0.8));
+}
+
+.card-cart-content:hover {
+    border: 2px solid #028a36;
+    border-right: 7px solid #028a36;
+    border-bottom: 7px solid #028a36;
+}
+
+.card-cart ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.info-cart-content {
+    border-radius: 10px;
+    font-family: "Share Tech Mono", monospace;
+    border: 2px solid rgb(255, 255, 255);
+    border-right: 5px solid rgb(255, 255, 255);
+    border-bottom: 5px solid rgb(255, 255, 255);
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(3, 3, 3, 0.514);
+    color: rgb(255, 255, 255);
+}
+
+
+.form-content {
+    display: flex;
+    font-family: "Share Tech Mono", monospace;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    border-right: 5px solid rgb(255, 255, 255);
+    border-bottom: 5px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 30px;
+    backdrop-filter: blur(4px);
+    color: white;
+}
+
+
+
+.form-content button {
+    background: linear-gradient(135deg, #12f538, #00995fd8, #ffd000, #fd00f1);
+    animation: gradiente 8s ease infinite;
+    background-size: 300% 300%;
+    border: none;
+    transition: 0.5s;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 100px;
+    color: black;
+    margin-top: 20px;
+}
+
+.form-content button:hover {
+    transform: scale(1.04);
+}
+
+.form-content button:disabled {
+    opacity: 0.5;
+    background: linear-gradient(135deg, #ff4800, #ff0000d8, #cf013f, #ff3c00);
+    cursor: not-allowed;
+}
+
+.form-content input {
+    height: 40px;
+    border-radius: 7px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Share Tech Mono", monospace;
+    border: 2px solid rgb(255, 255, 255);
+    border-right: 5px solid rgb(255, 255, 255);
+    border-bottom: 5px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    width: 70%;
+    color: white;
+}
+
+.container-img-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.imgs-footer {
+    width: 50px;
+    height: auto;
+    transition: 0.5s;
+}
+
+.imgs-footer:hover {
+    transform: scale(1.06);
+    filter: drop-shadow(0px 0px 12px rgba(255, 204, 0, 0.6)) drop-shadow(0px 0px 12px rgba(255, 0, 127, 0.8));
+}
