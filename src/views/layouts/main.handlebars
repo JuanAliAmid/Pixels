@@ -5,18 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="/icon.png" type="image/png">
     <title>Pixels</title>
 </head>
 
-<body class="bg-base-200">
+<body class="bg-base-200" data-cid="{{cid}}">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        socket.on('connect', () => {
+            console.log('Conectado al servidor con id:', socket.id);
+        });
+    </script>
     {{>header}}
     <main class="main-content">
         {{{body}}}
     </main>
     {{>footer}}
+
 </body>
 
 </html>

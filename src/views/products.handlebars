@@ -3,16 +3,18 @@
     <img src="/mando.png" alt="icono de mando" class="icon-mando">
 </div>
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="card-productos-io">
 
     {{#each games}}
-    <div class="card bg-base-100">
+    <div class="card bg-base-100" data-id="{{_id}}">
         <div class="card-body">
             <ul>
                 <li>
-                    <h2 class="text-2xl">{{nombre}}</h2>
-                    <h3><strong>Categoría:</strong> {{categoria}}</h3>
-                    <h3><strong>Precio:</strong> ${{precio}}</h3>
+                    <img src="{{thumbnails}}" alt="{{title}}" class="object-cover imgs-cards" draggable="false">
+                    <h2 class="text-2xl">{{title}}</h2>
+                    <h3><strong>Categoría:</strong> {{category}}</h3>
+
+                    <h3><strong>Precio:</strong> ${{price}}</h3>
                 </li>
                 <div class="card-actios justify-end">
                     <a class="btn btn-info" href="/products/{{_id}}">Ver detalle</a>
@@ -23,4 +25,5 @@
     </div>
     {{/each}}
 </div>
-<script src="/agregar.js"></script>
+<script src="/js/agregar.js"></script>
+<script src="/js/live.js"></script>

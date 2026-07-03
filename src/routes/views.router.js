@@ -8,6 +8,6 @@ router.get("/", (req, res) => { res.render("home") })
 
 router.get("/form", (req, res) => { res.render("form") })
 
-router.get('/cart', cartController.getAllGamesCart); //traer todos los juegos
+router.get('/cart/:cid', cartController.getAllGamesCart); //traer todos los juegos
 
 export default router;

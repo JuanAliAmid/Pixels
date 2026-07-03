@@ -6,21 +6,21 @@ mongoose.connect(envs.mongodb_uri)
 
 async function insertGames() {
     const gameData = [
-        { nombre: 'Mortal Kombat', anio: 1992, categoria: 'Lucha', precio: 15000 },
-        { nombre: 'Shadow of the Colossus', anio: 2005, categoria: 'Aventura', precio: 18000 },
-        { nombre: 'Elden Ring', anio: 2022, categoria: 'Rol', precio: 35000 },
-        { nombre: 'Need for Speed Unbound', anio: 2022, categoria: 'Carreras', precio: 28000 },
-        { nombre: 'Mortal Kombat X', anio: 2015, categoria: 'Lucha', precio: 12000 },
-        { nombre: 'Sonic the Hedgehog', anio: 1991, categoria: 'Aventura', precio: 8000 },
-        { nombre: 'Fortnite', anio: 2017, categoria: 'Batalla campal', precio: 0 },
-        { nombre: 'Call of Duty: Warzone Caldera', anio: 2020, categoria: 'Batalla campal', precio: 0 },
-        { nombre: 'The Witcher', anio: 2007, categoria: 'Rol', precio: 10000 },
-        { nombre: 'Grand Theft Auto V', anio: 2013, categoria: 'Aventura', precio: 9000 },
-        { nombre: 'Counter-Strike 2', anio: 2023, categoria: 'Disparos', precio: 0 },
-        { nombre: 'The Last of Us', anio: 2013, categoria: 'Aventura', precio: 22000 },
-        { nombre: 'God of War', anio: 2005, categoria: 'Aventura', precio: 20000 },
-        { nombre: 'Mario Kart: Super Circuit', anio: 2001, categoria: 'Carreras', precio: 11000 },
-        { nombre: 'Cuphead', anio: 2017, categoria: 'Disparos', precio: 7000 }
+        { title: 'Mortal Kombat', category: 'Lucha', price: 15000, description: 'Juego de lucha lanzado en 1992.' },
+        { title: 'Shadow of the Colossus', category: 'Aventura', price: 18000, description: 'Juego de aventura lanzado en 2005.' },
+        { title: 'Elden Ring', category: 'Rol', price: 35000, description: 'Juego de rol lanzado en 2022.' },
+        { title: 'Need for Speed Unbound', category: 'Carreras', price: 28000, description: 'Juego de carreras lanzado en 2022.' },
+        { title: 'Mortal Kombat X', category: 'Lucha', price: 12000, description: 'Juego de lucha lanzado en 2015.' },
+        { title: 'Sonic the Hedgehog', category: 'Aventura', price: 8000, description: 'Juego de aventura lanzado en 1991.' },
+        { title: 'Fortnite', category: 'Batalla campal', price: 0, description: 'Juego de batalla campal lanzado en 2017.' },
+        { title: 'Call of Duty: Warzone Caldera', category: 'Batalla campal', price: 0, description: 'Juego de batalla campal lanzado en 2020.' },
+        { title: 'The Witcher', category: 'Rol', price: 10000, description: 'Juego de rol lanzado en 2007.' },
+        { title: 'Grand Theft Auto V', category: 'Aventura', price: 9000, description: 'Juego de aventura lanzado en 2013.' },
+        { title: 'Counter-Strike 2', category: 'Disparos', price: 0, description: 'Juego de disparos lanzado en 2023.' },
+        { title: 'The Last of Us', category: 'Aventura', price: 22000, description: 'Juego de aventura lanzado en 2013.' },
+        { title: 'God of War', category: 'Aventura', price: 20000, description: 'Juego de aventura lanzado en 2005.' },
+        { title: 'Mario Kart: Super Circuit', category: 'Carreras', price: 11000, description: 'Juego de carreras lanzado en 2001.' },
+        { title: 'Cuphead', category: 'Disparos', price: 7000, description: 'Juego de disparos lanzado en 2017.' }
     ]
     try {
         const gamesInserts = await gameModel.insertMany(gameData)

@@ -1,22 +1,24 @@
-{{#if games.length}}
+{{#if games.productos.length}}
 <div class="info-cart-content">
-    <h2 >Productos: <span class="h2-contador">{{total}}</span></h2>
+    <h2>Productos: <span class="h2-contador">{{total}}</span></h2>
     <h2>Total: <span class="h2-total-carrito">{{totalMonto}}</span></h2>
 </div>
-{{#each games}}
-{{#each productos}}
+{{#each games.productos}}
 <div class="card bg-base-100 card-cart-content">
-    <div class="card-body card-cart" >
+    <div class="card-body card-cart">
+        <img src="{{product.thumbnails}}" alt="{{product.title}}" class="object-cover imgs-cards" draggable="false">
         <ul>
             <li>
-                <h2 class="text-2xl">{{product.nombre}}</h2>
-                <h3>${{product.precio}}</h3>
-                <button class="btn-eliminar " data-_id="{{_id}}" data-precio="{{precio}}"><img src="/icon-bote.png" class="icon-basura" alt="bote de basura"></button>
+                <h2 class="text-2xl">{{product.title}}</h2>
+                <h3>${{product.price}}</h3>
             </li>
         </ul>
     </div>
+    <div>
+        <button class="btn-eliminar " data-_id="{{_id}}" data-precio="{{product.price}}"><img src="/icon-bote.png"
+                class="icon-basura" alt="bote de basura"></button>
+    </div>
 </div>
-{{/each}}
 {{/each}}
 {{else}}
 
@@ -26,4 +28,5 @@
 </button>
 
 {{/if}}
-<script src="/agregar.js"></script>
+<script src="/js/agregar.js"></script>
+<script src="/js/live.js"></script>

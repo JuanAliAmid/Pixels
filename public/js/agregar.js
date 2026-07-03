@@ -8,23 +8,22 @@ const totalCart = document.querySelector('.h2-total-carrito');
 botonAgregar.forEach(data => {
     data.addEventListener('click', async () => {
         const productoId = data.dataset.id;
+        const productoCid = document.body.dataset.cid;
         console.log('click detectado')
 
         try {
 
-            const respuesta = await fetch('/api/cart', {
+            const respuesta = await fetch(`/api/carts/${productoCid}/products/${productoId}`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({productoId: productoId}),
             });
-            if (contadorHeader) {
-                contadorHeader.innerText = `(${Number(contadorHeader.innerText.replace(/\D/g, '')) + 1})`;
-            }
 
+            const jsonData = await respuesta.json();
             if (contadorCart) {
                 contadorCart.innerText = `${Number(contadorCart.innerText) + 1}`;
+            }
+
+            if (contadorHeader && jsonData.payload) {
+                contadorHeader.innerText = `(${jsonData.payload.productos.length})`;
             }
 
         } catch (error) {
@@ -44,7 +43,7 @@ botonEliminar.forEach(data => {
         console.log('click detectado')
         try {
 
-            const res = await fetch(`/api/cart/${id}`, {
+            const res = await fetch(`/api/carts/${id}`, {
 
                 method: 'DELETE',
                 headers: {

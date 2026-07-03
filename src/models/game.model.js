@@ -8,12 +8,6 @@ const gameSchema = new Schema({
         trim: true,
         unique: true,
     },
-    anio: {
-        type: Number,
-        required: [true, "Año es obligatorio"],
-        trim: true,
-        minlength: [4],
-    },
     category: {
         type: String,
         required: [true, "La categoria es obligatoria"],
@@ -41,7 +35,6 @@ const gameSchema = new Schema({
     },
     description: {
         type: String,
-        required: [true, "La descripción es obligatoria"],
         trim: true,
     }
 });
