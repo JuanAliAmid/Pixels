@@ -44,6 +44,7 @@ const emptyCartDao = async (cid) => { //vaciar carrito
     const empty = await cartModel.findByIdAndUpdate(
         cid,
         { $set: { productos: [] } },
+        {new: true}
     );
     return empty
 }
@@ -56,7 +57,8 @@ const createCartDao = async () => { //crear un cart
 const deleteGameByIdDao = async (cid, pid) => { //eliminar por id
     const pid2 = await cartModel.findOneAndUpdate(
         { _id: cid },
-        { $pull: { productos: { product: pid } } }
+        { $pull: { productos: { product: pid } } },
+        {new: true}
     )
     return pid2
 }

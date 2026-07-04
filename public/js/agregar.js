@@ -1,5 +1,6 @@
 const botonAgregar = document.querySelectorAll('.btn-agregar');
 const botonEliminar = document.querySelectorAll('.btn-eliminar');
+const botonVaciar = document.querySelector('.btn-vaciar');
 const contadorHeader = document.querySelector('.contador-header');
 const contadorCart = document.querySelector('.h2-contador');
 const totalCart = document.querySelector('.h2-total-carrito');
@@ -74,6 +75,29 @@ botonEliminar.forEach(data => {
         }
     })
 })
+
+if (botonVaciar) {
+    botonVaciar.addEventListener('click', async () => {
+
+        const cid = document.body.dataset.cid;
+
+        try {
+
+            const res = await fetch(`/api/carts/${cid}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            location.reload();
+
+        } catch (error) {
+            console.error('Error al vaciar carrito', error);
+        }
+
+    })
+}
+
 
 
 console.log(contadorHeader.innerHTML)

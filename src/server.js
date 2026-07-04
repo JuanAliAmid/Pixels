@@ -10,13 +10,12 @@ import cartModel from "./models/cart.model.js";
 import { envs } from "./config/envs.js";
 import { createServer } from 'http';
 import { Server } from 'socket.io';
+import recommendationRouter from "./routes/api/recommendation.routes.js";
 
 const app = express(); // crea la aplicaciopn express
 
 const serverHttp = createServer(app);
-
 const io = new Server(serverHttp);
-
 app.set('io', io);
 
 io.on('connection', (socket) => {
@@ -56,26 +55,28 @@ app.engine('handlebars', engine({
 }));
 
 app.set('view engine', 'handlebars');
+
 app.set('views', 'src/views')
+
 app.use(express.json()); // Permite recibir datos en formato JSON en el body
 
 app.use(express.static('public'))
+
 app.use(express.urlencoded({ extended: true })); // Permite recibir datos de formularios HTML en el body
 
 conectarDB();
 
-
 // routes api
 app.use('/api/products', gameRoutes); //base de datos
+
+app.use('/api/recommendation', recommendationRouter); 
 
 app.use('/api/carts', cartRouter);
 
 // routes views
 app.use('/', viewRouter); //VISTA: home
 
-// '/products' abre view-user-routes.js y lo pinta en products.handlebars
 app.use('/products', viewUserRouter); //VISTAS: lista y detalles
-
 
 const PORT = envs.port;
 serverHttp.listen(PORT, () => { console.log(`Server corriendo en http://localhost:${PORT}`); });

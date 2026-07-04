@@ -2,27 +2,31 @@
 <div class="info-cart-content">
     <h2>Productos: <span class="h2-contador">{{total}}</span></h2>
     <h2>Total: <span class="h2-total-carrito">{{totalMonto}}</span></h2>
+    <button class="btn-vaciar" data-cid="{{games._id}}">Vaciar carrito</button>
 </div>
-{{#each games.productos}}
-<div class="card bg-base-100 card-cart-content">
-    <div class="card-body card-cart">
-        <img src="{{product.thumbnails}}" alt="{{product.title}}" class="object-cover imgs-cards" draggable="false">
-        <ul>
-            <li>
-                <h2 class="text-2xl">{{product.title}}</h2>
-                <h3>${{product.price}}</h3>
-            </li>
-        </ul>
+<div class="content-cards-cart">
+    {{#each games.productos}}
+    <div class="card bg-base-100 card-cart-content">
+        <div class="card-body card-cart">
+            <img src="{{product.thumbnails}}" alt="{{product.title}}" class="object-cover imgs-cards" draggable="false">
+            <ul>
+                <li>
+                    <h2 class="text-2xl">{{product.title}}</h2>
+                    <h3>${{product.price}}</h3>
+                    <span>Cantidad: {{quantity}}</span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <button class="btn-eliminar " data-_id="{{_id}}" data-product="{{product._id}}"
+                data-precio="{{product.price}}"><img src="/icon-bote.png" class="icon-basura"
+                    alt="bote de basura"></button>
+        </div>
     </div>
-    <div>
-        <button class="btn-eliminar " data-_id="{{_id}}" data-product="{{product._id}}"
-            data-precio="{{product.price}}"><img src="/icon-bote.png" class="icon-basura" alt="bote de basura"></button>
-    </div>
+    {{/each}}
 </div>
-{{/each}}
-{{else}}
-
-<img src="/sonicError400.gif" alt="No encontrado" class="sonic-gif" draggable="false"/>
+    {{else}}
+<img src="/sonicError400.gif" alt="No encontrado" class="sonic-gif" draggable="false" />
 <h1 class="h1-pageError">Carrito vacio</h1>
 <button class="bton-home">
     <a href="/products">Volver a tienda</a>

@@ -10,6 +10,7 @@ socket.on('productoCreado', (producto) => {
         <div class="card-body">
             <ul>
                 <li>
+                    <img src="${producto.thumbnails[0]}" alt="${producto.title}" class="object-cover imgs-cards" draggable="false">
                     <h2 class="text-2xl">${producto.title}</h2>
                     <h3><strong>Categoría:</strong> ${producto.category}</h3>
                     <h3><strong>Precio:</strong> $${producto.price}</h3>
@@ -39,6 +40,7 @@ socket.on('productoActualizado', (producto) => {
         <div class="card-body">
             <ul>
                 <li>
+                <img src="${producto.thumbnails[0]}" alt="${producto.title}" class="object-cover imgs-cards" draggable="false">
                     <h2 class="text-2xl">${producto.title}</h2>
                     <h3><strong>Categoría:</strong> ${producto.category}</h3>
                     <h3><strong>Precio:</strong> $${producto.price}</h3>

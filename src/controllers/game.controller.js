@@ -51,7 +51,7 @@ const createGame = async (req, res) => { // crear nuevo juego
         const io = req.app.get('io');
         io.emit('productoCreado', newGame);
 
-        res.redirect("/products");
+        res.status(201).json({ success: true, payload: newGame });
 
     } catch (error) {
         console.log(error)

@@ -42,6 +42,22 @@ body {
 }
 
 /*======== BOTONES ========*/
+
+.btn-vaciar {
+    background: linear-gradient(135deg, #ff0800, #ff5e00, #e75656, #ff0000);
+    animation: gradiente 8s ease infinite;
+    background-size: 300% 300%;
+    border: none;
+    transition: 0.5s;
+    width: 170px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.btn-vaciar:hover {
+    transform: translatey(-5px);
+}
+
 .btn-info {
     background: linear-gradient(135deg, #fffb00, #cb3398, #cb3398, #fffb00);
     animation: gradiente 8s ease infinite;
@@ -166,6 +182,12 @@ h1.text-2xl {
 
 
 /*======== CONTENEDORES ========*/
+
+.content-cards-cart {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
 
 .container-img-footer {
     display: flex;
