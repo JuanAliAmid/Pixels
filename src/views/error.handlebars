@@ -1,8 +1,8 @@
 <div class="content-pageError">
     {{#ifEquals status 404}}
-    <img src="/sonicError404.gif"  alt="No encontrado" class="sonic-gif"/>
+    <img src="/sonicError404.gif"  alt="No encontrado" class="sonic-gif" draggable="false"/>
     {{else}}
-    <img src="/sonicError400.gif" alt="Error del servidor" class="sonic-gif"/>
+    <img src="/sonicError400.gif" alt="Error del servidor" class="sonic-gif" draggable="false"/>
     {{/ifEquals}}
 
     <h1 class="h1-pageError">{{message}}</h1>

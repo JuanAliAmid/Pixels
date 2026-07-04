@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Mortal Kombat",
+    "description": "Juego de lucha lanzado en 1992.",
+    "code": "MK92",
+    "price": 15000,
+    "status": true,
+    "stock": 10,
+    "category": "Lucha",
+    "thumbnails": ["/mortal-kombat.jpg"]
+  },
+  {
+    "id": 2,
+    "title": "Shadow of the Colossus",
+    "description": "Juego de aventura lanzado en 2005.",
+    "code": "SOTC05",
+    "price": 18000,
+    "status": true,
+    "stock": 8,
+    "category": "Aventura",
+    "thumbnails": ["/shadow-of-the-colossus.jpg"]
+  },
+  {
+    "id": 3,
+    "title": "Elden Ring",
+    "description": "Juego de rol lanzado en 2022.",
+    "code": "ER22",
+    "price": 35000,
+    "status": true,
+    "stock": 5,
+    "category": "Rol",
+    "thumbnails": ["/elden-ring.jpg"]
+  },
+  {
+    "id": 4,
+    "title": "Need for Speed Unbound",
+    "description": "Juego de carreras lanzado en 2022.",
+    "code": "NFSU22",
+    "price": 28000,
+    "status": true,
+    "stock": 6,
+    "category": "Carreras",
+    "thumbnails": ["/need-for-speed-unbound.jpg"]
+  },
+  {
+    "id": 5,
+    "title": "Mortal Kombat X",
+    "description": "Juego de lucha lanzado en 2015.",
+    "code": "MKX15",
+    "price": 18000,
+    "status": true,
+    "stock": 10,
+    "category": "Lucha",
+    "thumbnails": ["/mortal-kombat-x.jpg"]
+  },
+  {
+    "id": 6,
+    "title": "Sonic the Hedgehog",
+    "description": "Juego de aventura lanzado en 1991.",
+    "code": "SONIC91",
+    "price": 8000,
+    "status": true,
+    "stock": 15,
+    "category": "Aventura",
+    "thumbnails": ["/sonic-the-hedgehog.jpg"]
+  },
+  {
+    "id": 7,
+    "title": "Fortnite",
+    "description": "Juego de batalla campal lanzado en 2017.",
+    "code": "FORT17",
+    "price": 0,
+    "status": true,
+    "stock": 999,
+    "category": "Batalla campal",
+    "thumbnails": ["/fortnite.jpg"]
+  },
+  {
+    "id": 8,
+    "title": "Call of Duty: Warzone Caldera",
+    "description": "Juego de batalla campal lanzado en 2020.",
+    "code": "CODWC20",
+    "price": 10000,
+    "status": false,
+    "stock": 0,
+    "category": "Batalla campal",
+    "thumbnails": ["/call-of-duty-warzone-caldera.jpg"]
+  },
+  {
+    "id": 9,
+    "title": "The Witcher",
+    "description": "Juego de rol lanzado en 2007.",
+    "code": "WITCH07",
+    "price": 10000,
+    "status": true,
+    "stock": 7,
+    "category": "Rol",
+    "thumbnails": ["/the-witcher.jpg"]
+  },
+  {
+    "id": 10,
+    "title": "Grand Theft Auto V",
+    "description": "Juego de aventura lanzado en 2013.",
+    "code": "GTAV13",
+    "price": 9000,
+    "status": true,
+    "stock": 4,
+    "category": "Aventura",
+    "thumbnails": ["/grand-theft-auto-v.jpg"]
+  }
+]

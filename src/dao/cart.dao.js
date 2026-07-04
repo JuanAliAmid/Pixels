@@ -56,7 +56,7 @@ const createCartDao = async () => { //crear un cart
 const deleteGameByIdDao = async (cid, pid) => { //eliminar por id
     const pid2 = await cartModel.findOneAndUpdate(
         { _id: cid },
-        { $pull: { productos: { _id: pid } } }
+        { $pull: { productos: { product: pid } } }
     )
     return pid2
 }

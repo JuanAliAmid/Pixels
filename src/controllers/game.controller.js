@@ -4,9 +4,12 @@ import gameDao from "../dao/game.dao.js";
 const getAllGames = async (req, res) => { //traer todos los juegos
     const page = req.query.page || 1;
     const limit = req.query.limit || 10;
+    const sort = req.query.sort;
+    const query = req.query.query;
+
     try {
 
-        const games = await gameDao.getAllGamesDao(page, limit)
+        const games = await gameDao.getAllGamesDao(page, limit, sort, query)
 
         if (games.docs.length === 0) {
             return res.status(400).json({ success: false, error: "no existen juegos" });
@@ -127,10 +130,15 @@ const lookForById = async (req, res) => { //buscar por id
 
 //======================== view.game.routes ===============================
 const getAllGamesViews = async (req, res) => {
+    const page = req.query.page || 1;
+    const limit = req.query.limit || 10;
+    const sort = req.query.sort;
+    const query = req.query.query;
     try {
-        const games = await gameDao.getAllGamesViewsDao();
-        console.log(games)
-        res.render("products", { tittle: "Lista de juegos", games });
+        const games = await gameDao.getAllGamesDao(page, limit, sort, query);
+
+        res.render("products", { tittle: "Lista de juegos", games: games.docs, totalPages: games.totalPages, hasNextPage: games.hasNextPage, hasPrevPage: games.hasPrevPage, nextPage: games.nextPage, prevPage: games.prevPage });
+
         console.log('Exito al traer los juegos');
     } catch (error) {
         console.error('Hubo un error', error);

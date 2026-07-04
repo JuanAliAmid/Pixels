@@ -15,14 +15,15 @@
         </ul>
     </div>
     <div>
-        <button class="btn-eliminar " data-_id="{{_id}}" data-precio="{{product.price}}"><img src="/icon-bote.png"
-                class="icon-basura" alt="bote de basura"></button>
+        <button class="btn-eliminar " data-_id="{{_id}}" data-product="{{product._id}}"
+            data-precio="{{product.price}}"><img src="/icon-bote.png" class="icon-basura" alt="bote de basura"></button>
     </div>
 </div>
 {{/each}}
 {{else}}
 
-<h1>Carrito vacio</h1>
+<img src="/sonicError400.gif" alt="No encontrado" class="sonic-gif" draggable="false"/>
+<h1 class="h1-pageError">Carrito vacio</h1>
 <button class="bton-home">
     <a href="/products">Volver a tienda</a>
 </button>

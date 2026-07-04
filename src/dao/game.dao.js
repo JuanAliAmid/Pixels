@@ -2,8 +2,14 @@ import gameModel from "../models/game.model.js";
 
 //======================== game.routes ===============================
 
-const getAllGamesDao = async (page, limit) => { //traer todos los juegos
-    const games = await gameModel.paginate({}, { page, limit });
+const getAllGamesDao = async (page, limit, sort, query) => { //traer todos los juegos
+
+    sort = sort === 'desc' ? { price: -1 } : sort === 'asc' ? { price: 1 } : undefined;
+
+    const filtro = query === 'disponible' ? { status: true } : query === undefined ? {} : { category: query };
+
+    const games = await gameModel.paginate(filtro, { page, limit, sort, lean: true });
+
     return games
 }
 
@@ -53,10 +59,6 @@ const lookForByIdDao = async (_id) => { //buscar por id
 
 //======================== view.game.routes ===============================
 
-const getAllGamesViewsDao = async () => {
-    const games = await gameModel.find().lean();
-    return games;
-}
 
 const lookForByIdViewsDao = async (id) => {
     const game = await gameModel.findById(id).lean()
@@ -69,6 +71,5 @@ export default {
     updateGameByIdDao,
     deleteGameDao,
     lookForByIdDao,
-    getAllGamesViewsDao,
     lookForByIdViewsDao
 }

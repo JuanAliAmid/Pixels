@@ -35,22 +35,26 @@ botonAgregar.forEach(data => {
 
 botonEliminar.forEach(data => {
     data.addEventListener('click', async () => {
+
         const id = data.dataset._id;
+        const cid = document.body.dataset.cid;
+        const pid = data.dataset.product;
+
         const precio = Number(data.dataset.precio);
-        console.log(data.dataset)
-        console.log(precio)
 
         console.log('click detectado')
         try {
 
-            const res = await fetch(`/api/carts/${id}`, {
+            const res = await fetch(`/api/carts/${cid}/products/${pid}`, {
 
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
                 },
             });
+
             data.closest('.card-cart-content').remove()
+
             if (contadorHeader) {
                 contadorHeader.innerText = `(${Number(contadorHeader.innerText.replace(/\D/g, '')) - 1})`;
             }
