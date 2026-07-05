@@ -184,9 +184,15 @@ h1.text-2xl {
 /*======== CONTENEDORES ========*/
 
 .content-cards-cart {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
+}
+.content-cards-cart > div { /* Cambia "div" por la clase de tu tarjeta si la tiene */
+    width: 100%;
+    max-width: 480px; /* Evita que se haga gigante en una sola fila */
+    /* El tamaño que pusiste en max-width debe ser el ideal para cuando se ven 2 columnas */
 }
 
 .container-img-footer {

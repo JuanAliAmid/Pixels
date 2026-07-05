@@ -40,4 +40,4 @@ const gameSchema = new Schema({
 });
 
 gameSchema.plugin(mongoosePaginate);
-export default model('Game', gameSchema);
+export default model('Product', gameSchema);

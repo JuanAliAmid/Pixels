@@ -4,7 +4,7 @@ const cartSchema = new Schema({
     productos: [{
         product: {
             type: Schema.Types.ObjectId,
-            ref: 'Game'
+            ref: 'Product'
         },
         quantity: {
             type: Number

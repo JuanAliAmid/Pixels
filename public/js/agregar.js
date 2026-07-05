@@ -53,8 +53,27 @@ botonEliminar.forEach(data => {
                     'Content-Type': 'application/json'
                 },
             });
-
             data.closest('.card-cart-content').remove()
+            const cardsRestantes = document.querySelectorAll('.card-cart-content').length;
+            if (cardsRestantes === 0) {
+
+                document.querySelector('.info-cart-content').remove();
+
+                const contenedor = document.querySelector('.content-cards-cart');
+
+                contenedor.classList.remove('content-cards-cart');
+                
+                contenedor.classList.add('content-pageError');
+
+                contenedor.innerHTML = `
+                <img src="/sonicError400.gif" alt="No encontrado" class="sonic-gif" draggable="false" />
+                <h1 class="h1-pageError">Carrito vacio</h1>
+                <button class="bton-home">
+                <a href="/products">Volver a tienda</a>
+                </button>
+                `;
+
+            }
 
             if (contadorHeader) {
                 contadorHeader.innerText = `(${Number(contadorHeader.innerText.replace(/\D/g, '')) - 1})`;
