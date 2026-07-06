@@ -2,9 +2,6 @@
 
 Tienda de videojuegos online desarrollada como proyecto final del curso de Backend en Coderhouse.
 
-## Demo
-[Ver repositorio](https://github.com/JuanAliAmid/Pixels)
-
 ## Descripción
 
 E-commerce de videojuegos que permite explorar un catálogo con paginación y filtros, gestionar un carrito de compras, y visualizar el detalle de cada producto. Además, incorpora un sistema de recomendaciones donde los usuarios pueden sugerir juegos para que el equipo evalúe incorporarlos al catálogo.
