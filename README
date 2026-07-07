@@ -15,36 +15,42 @@ E-commerce de videojuegos que permite explorar un catálogo con paginación y fi
 ### Pasos
 
 1. Cloná el repositorio
-   ```
-   git clone https://github.com/JuanAliAmid/Pixels.git
-   cd Pixels
-   ```
+
+```bash
+git clone https://github.com/JuanAliAmid/Pixels.git
+cd Pixels
+```
 
 2. Instalá las dependencias
-   ```
-   npm install
-   ```
+
+```bash
+npm install
+```
 
 3. Creá un archivo `.env` en la raíz con estas variables:
-   ```
-   PORT=8080
-   MONGODB_URI="mongodb://localhost:27017/pixels"
-   ```
+
+```
+PORT=8080
+MONGODB_URI="mongodb://localhost:27017/pixels"
+```
 
 4. (Opcional) Poblá la base de datos con productos de ejemplo:
-   ```
-   node src/data/insertGames.js
-   ```
 
-5. Levantá el servidor
-   ```
-   npm start
-   ```
+```bash
+node src/data/insertGames.js
+```
 
-6. Abrí en el navegador
-   ```
-   http://localhost:8080
-   ```
+5. Levantá el servidor:
+
+```bash
+npm start
+```
+
+6. Abrí en el navegador:
+
+```
+http://localhost:8080
+```
 
 ## Vistas
 
