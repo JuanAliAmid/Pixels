@@ -6,6 +6,46 @@ Tienda de videojuegos online desarrollada como proyecto final del curso de Backe
 
 E-commerce de videojuegos que permite explorar un catálogo con paginación y filtros, gestionar un carrito de compras, y visualizar el detalle de cada producto. Además, incorpora un sistema de recomendaciones donde los usuarios pueden sugerir juegos para que el equipo evalúe incorporarlos al catálogo.
 
+## Instalación y uso local
+
+### Requisitos previos
+- Node.js v18 o superior
+- MongoDB corriendo localmente (o una URI de MongoDB Atlas)
+
+### Pasos
+
+1. Cloná el repositorio
+   \`\`\`
+   git clone https://github.com/tu-usuario/Pixels.git
+   cd Pixels
+   \`\`\`
+
+2. Instalá las dependencias
+   \`\`\`
+   npm install
+   \`\`\`
+
+3. Creá un archivo \`.env\` en la raíz con estas variables:
+   \`\`\`
+   PORT=8080
+   MONGODB_URI="mongodb://localhost:27017/pixels"
+   \`\`\`
+
+4. (Opcional) Poblá la base de datos con productos de ejemplo:
+   \`\`\`
+   node src/data/insertGames.js
+   \`\`\`
+
+5. Levantá el servidor
+   \`\`\`
+   npm start
+   \`\`\`
+
+6. Abrí en el navegador
+   \`\`\`
+   http://localhost:8080
+   \`\`\`
+
 ## Vistas
 
 - **Home** — presentación del sitio
